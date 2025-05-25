@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from gamemath.com/gdc2021/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 May 2025 17:04:30 GMT -->
+<head>
+	<title>Getting There in Style GDC 2021 Presentation Supplemental Content</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../book/3dmathprimer_book.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="../favicon.png">
+	<!-- examples below use jquery -->
+	<script src="../../ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="../../www.googletagmanager.com/gtag/js6bee?id=G-YK41S9NXZG"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-YK41S9NXZG');
+	</script>
+	<style>
+		#lightmodetoggle {
+			float:right;
+		}
+
+		.GameWorldContainer canvas
+		{
+			border: 1px solid black;
+		}
+
+	</style>
+</head>
+<body id="body" class="LoudLinks">
+<div id="BodyContainer">
+<div id="LeftColumn"></div>
+<div id="MainColumn">
+<div class="ChapterTitleSection">
+    <div class="ChapterTitle">Interpolation and<br/>Control Systems
+<img style="float:right; width:1em; height:1em" id="lightmodetoggle" src="../light_dark_toggle.png">
+</div>
+<script>
+    document.getElementById('lightmodetoggle').onclick = function() {
+        lightmode = lightmode ? 0 : 1;
+        if ( lightmode )
+            body.classList.add( "LightMode" );
+        else
+            body.classList.remove( "LightMode" );
+        if ( window.localStorage )
+            window.localStorage.setItem( 'lightMode', lightmode )
+    }
+</script>
+</div>
+<!-- declare some images -->
+<div style="display:none;">
+	<img id="cart_blue" src="cart_blue.png" width="64" height="64">
+	<img id="cart_red" src="cart_red.png" width="64" height="64">
+	<img id="target" src="cart_point_neutral_opaque.png" width="64" height="64">
+</div>
+
+This page contains content related to my GDC 2021 talk
+<a href=../../schedule.gdconf.com/session/math-in-game-development-summit-getting-there-in-style-intro-to-interpolation-and-control-systems/880908.html>
+<i>Getting There in Style: Intro to interpolation and Control Systems</i></a>.
+<br>
+
+<h1>Misc links</h1>
+
+<!-- FIXME First-order lag - Variable frame rate.  How to different values of k relate to each other and the time constant? -->
+<!-- Discuss ramp function and "chase at constant speed" control system? -->
+
+More info on "gadget" functions that remap the unit interval:
+<ul>
+	<li><a href="https://www.gdcvault.com/play/1022142/Math-for-Game-Programmers-Fast">Fast
+		and Funky 1D Nonlinear Transformations</a>.  GDC talk by Squirrel Eiserloh.
+	<li><a href=https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/">Bias and Gain
+		Are Your Friend</a>
+	<li><a href="https://www.shadertoy.com/view/ltjcWW">Smooth Step Alternatives</a>
+	<li><a href="https://www.iquilezles.org/www/articles/functions/functions.htm">Useful little functions</a>.
+</ul>
+
+<br>
+
+<a href="../../twitter.com/sugarbycukia/status/1393567791878483970">Here's</a> a neat example
+of using an under-damped system to give something some personality.
+
+<br>
+<br>
+
+The Unity function <a href="https://docs.unity3d.com/ScriptReference/Mathf.SmoothDamp.html">Mathf.SmoothDamp</a>
+implements a critically-damped PD controller.
+
+<br>
+<br>
+
+Daniel Holden has a great <a href="http://theorangeduck.com/page/spring-roll-call">blog post</a>
+that covers a lot of the same material in my talk.
+
+<br>
+<br>
+
+The dynamics chapter in my book has some info on <a href="../book/dynamics.html#force_spring">spring forces</a>.
+It has explicit functions of time for undamped, critically-damped, and undamped systems.
+
+<h1>Timed Transitions</h1>
+
+Compare various methods of timed transitions.  Click on the canvas to set the target position.
+If a transition is not already active, it is started.  Click and drag while the transition is active
+to see how the method reacts to the target position changing while the transition is active.
+<br>
+<br>
+The javascript source for the transitions is <a href="timed_transitions.js">here</a>.
+
+<div id="TimedTransitions" class="GameWorldContainer">
+	<table class="ControlsContainer">
+		<tr class="BlueSettings">
+			<td>Blue cart:</td>
+			<td class="MethodSelect"><select>
+				<option selected="selected">Standard Lerp</option>
+				<option>Standard Smoothstep</option>
+				<option>Stateless Lerp</option>
+				<option>Stateless Smoothstep</option>
+			</select></td>
+		</tr>
+		<tr class="RedSettings">
+			<td>Red cart:</td>
+			<td class="MethodSelect"><select>
+				<option selected="selected">None</option>
+				<option>Standard Lerp</option>
+				<option>Standard Smoothstep</option>
+				<option>Stateless Lerp</option>
+				<option>Stateless Smoothstep</option>
+			</select></td>
+		</tr>
+		<tr class="DurationSelect">
+			<td>Duration:</td>
+			<td>
+				<input type="range" min="1" max="200" value="30" class="slider" id="DurationSlider">
+				<span id="DurationDisplay"></span>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table class="CanvasContainer">
+		<tr>
+			<td><canvas width=350 height=350 id="Scene"></canvas></td>
+			<td><canvas width=350 height=350 id="PosGraph"></canvas></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><canvas width=350 height=250 id="VelGraph"></canvas></td>
+		</tr>
+		<!--
+		<tr>
+			<td></td>
+			<td><canvas width=300 height=100 id="AccGraph"></canvas></td>
+		</tr>
+		-->
+	</table>
+</div>
+
+<h1>Control Systems</h1>
+
+<div id="ControlSystems" class="GameWorldContainer">
+	<table class="ControlsContainer">
+		<tr class="BlueSettings">
+		</tr>
+		<tr class="RedSettings">
+		</tr>
+	</table>
+	<br>
+	<table class="CanvasContainer">
+		<tr>
+			<td><canvas width=350 height=350 id="Scene"></canvas></td>
+			<td><canvas width=350 height=350 id="PosGraph"></canvas></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><canvas width=350 height=250 id="VelGraph"></canvas></td>
+		</tr>
+		<!--
+		<tr>
+			<td></td>
+			<td><canvas width=300 height=100 id="AccGraph"></canvas></td>
+		</tr>
+		-->
+	</table>
+</div>
+
+<script src="demo_framework.js"></script>
+<script src="timed_transitions.js"></script>
+<script src="control_systems.js"></script>
+<script>
+// Wen the DOM is ready, create game worlds
+$(function() {
+	new TimedTransitionsWorld( $( '#TimedTransitions' ) );
+	new ControlSystemsWorld( $( '#ControlSystems' ) );
+} )
+</script>
+
+<div id="RightColumn"></div>
+</div>
+</body>
+<script>
+	var body = document.getElementById('body');
+	var lightmode = ( window.localStorage && parseInt( window.localStorage.getItem( 'lightMode' ) ) ) ? 1 : 0;
+	if ( lightmode )
+		body.classList.add( "LightMode" );
+	document.getElementById('lightmodetoggle').onclick = function() {
+		lightmode = lightmode ? 0 : 1;
+		if ( lightmode )
+			body.classList.add( "LightMode" );
+		else
+			body.classList.remove( "LightMode" );
+		if ( window.localStorage )
+			window.localStorage.setItem( 'lightMode', lightmode )
+	}
+</script>
+
+<!-- Mirrored from gamemath.com/gdc2021/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 May 2025 17:04:32 GMT -->
+</html>
+

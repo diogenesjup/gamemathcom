@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from gamemath.com/book/afterword.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 May 2025 17:10:55 GMT -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="3dmathprimer_book.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="../favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="../../www.googletagmanager.com/gtag/js6bee?id=G-YK41S9NXZG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YK41S9NXZG');
+    </script>
+<title>Afterword - 3D Math Primer for Graphics and Game Development</title>
+<style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+</style></head><body id="body">
+<script>
+    var body = document.getElementById('body');
+    var lightmode = ( parseInt( window.localStorage && window.localStorage.getItem( 'lightMode' ) ) ) ? 1 : 0;
+    if ( lightmode )
+        body.classList.add( "LightMode" );
+</script>
+<div id="BodyContainer">
+<div id="LeftColumn"></div>
+<div id="MainColumn">
+<header class="NavBar">
+<div class="NavPrevChapter"><a class="NavChapterNum" href="curves.html">&lt;&lt; Curves in 3D</a>
+</div><div class="NavContents"><a href="index.html">Contents</a></div><div class="NavNextChapter">
+<a class="NavChapterNum" href="geomtests.html">Geometric Tests &gt;&gt;</a></div>
+</header>
+<div class="ChapterTitleSection">
+    <div class="ChapterNumber">Chapter 14
+<img style="float:right; width:1em; height:1em" id="lightmodetoggle" src="../light_dark_toggle.png">
+</div>
+<script>
+    document.getElementById('lightmodetoggle').onclick = function() {
+        lightmode = lightmode ? 0 : 1;
+        if ( lightmode )
+            body.classList.add( "LightMode" );
+        else
+            body.classList.remove( "LightMode" );
+        if ( window.localStorage )
+            window.localStorage.setItem( 'lightMode', lightmode )
+    }
+</script>
+<div class="ChapterTitle">Afterword</div>
+<div class="ChapterQuotes">
+<div class="WittyQuotation">
+            If you are interested in stories with happy endings<br>you would be better off reading some other book.
+<div class="QuotationSource">&#8212;&#160;Lemony Snicket,<br><i>A Series of Unfortunate Events: The Bad Beginning</i>
+</div>
+</div>
+</div>
+</div>
+
+<h1 id="what_next"><span class="SectionNumber">14.1</span><span class="SectionTitle">What Next?</span></h1>
+<p class="NoIndent">
+You have reached the end of the book.  Where to go from here?  Well, if you've stayed with us up
+to this point, then you probably understand enough to get started with some real code, and you're
+probably itching to put all this new knowledge to work, right?  We've found that the best way to
+learn is by doing.  So don't just sit there, start making something!
+</p>
+<p>
+As our final act, we leave you with these last few exercises.  Some of them might be applicable
+only for those readers interested in making video games, but we wish you good luck wherever this
+knowledge takes you. We've learned a lot, worked very hard, and had a lot of fun writing this
+book, and we hope the same can be said of your experience reading it.
+</p>
+
+<h1 id="exercises">Exercises</h1>
+<div class="ExercisesSection">
+<ol class="ExercisesList">
+    <li>
+Download a game engine and make a mod for it.
+</li>
+<li>
+Learn about what makes video games fun.  Take three of your favorite games and make a
+        detailed analysis of their mechanics.  What makes them fun?
+</li>
+<li>
+Complete a large and challenging project that implements an advanced
+        technique or an experimental gameplay feature.
+</li>
+<li>
+Pick a particular aspect of video game programming that you find interesting and delve deeply
+        into that area.
+</li>
+<li>
+Get a job working for a company that makes the kinds of games you will be proud of.
+        (Hint: This is <i>greatly</i> facilitated by taking advantage of your answers
+        to Exercises 1&#8211;4.  Also, see the index entry for &#8220;job interview.&#8221;)
+</li>
+<li>
+Learn how to get along with other people, work on a team, and use version control
+        and task tracking software.  Nobody succeeds alone.
+</li>
+<li>
+Make some great video games.  Always use technology as a means to an end,
+        and never lose sight of the end product.
+</li>
+<li>
+Never stop learning.
+</li>
+</ol>
+</div><div class="ChapterEndQuotes">
+<div class="WittyQuotation">
+        I'm very well acquainted, too, with matters mathematical,
+        <br>I understand equations, both the simple and quadratical,
+        <br>About binomial theorem I'm teeming with a lot o' news,
+        <br>With many cheerful facts about the square of the hypotenuse.
+        <br>I'm very good at integral and differential calculus;
+        <br>I know the scientific names of beings animalculous:
+        <br>In short, in matters vegetable, animal, and mineral,
+        <br>I am the very model of a modern Major-General.
+<div class="QuotationSource">&#8212;&#160;Major-General Stanley from <i>The Pirates of Penzance</i>
+</div>
+</div>
+</div><footer class="NavBar">
+<div class="NavPrevChapter"><a class="NavChapterNum" href="curves.html">&lt;&lt; Curves in 3D</a>
+</div><div class="NavContents"><a onclick="window.scrollTo(0,0);" style="cursor:pointer;">Back To Top</a>
+</div><div class="NavNextChapter"><a class="NavChapterNum" href="geomtests.html">Geometric Tests &gt;&gt;
+</a></div>
+</footer></div>
+<div id="RightColumn"></div>
+</div></body>
+<!-- Mirrored from gamemath.com/book/afterword.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 May 2025 17:10:55 GMT -->
+</html>

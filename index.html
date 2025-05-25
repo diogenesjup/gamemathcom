@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from gamemath.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 May 2025 17:04:12 GMT -->
+<head>
+	<title>3D Math Primer for Graphics and Game Development</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="book/3dmathprimer_book.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="../www.googletagmanager.com/gtag/js6bee?id=G-YK41S9NXZG"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-YK41S9NXZG');
+	</script>
+	<style>
+		#lightmodetoggle {
+			float:right;
+		}
+	</style>
+</head>
+<body id="body" class="LoudLinks">
+<div id="BodyContainer">
+<div id="LeftColumn"></div>
+<div id="MainColumn">
+<div class="ChapterTitleSection">
+    <div class="ChapterTitle">Welcome
+<img style="float:right; width:1em; height:1em" id="lightmodetoggle" src="light_dark_toggle.png">
+</div>
+<script>
+    document.getElementById('lightmodetoggle').onclick = function() {
+        lightmode = lightmode ? 0 : 1;
+        if ( lightmode )
+            body.classList.add( "LightMode" );
+        else
+            body.classList.remove( "LightMode" );
+        if ( window.localStorage )
+            window.localStorage.setItem( 'lightMode', lightmode )
+    }
+</script>
+</div>
+This is the home page of the book <i>3D Math Primer for Graphics and Game Development</i>.
+<br>
+You can now <a href="book/intro.html">read the entire book</a> for free!
+<br><br>
+<a href="book/intro.html">
+<img style="width:100%;" src="book/figs/cover_72dpi.jpg"/>
+</a>
+<br/>
+<br/>
+<h1>GDC Talks</h1>
+<ul>
+	<li><b>NEW!</b> GDC 2021. <a href=../schedule.gdconf.com/session/math-in-game-development-summit-getting-there-in-style-intro-to-interpolation-and-control-systems/880908.html>
+<i>Getting There in Style: Intro to interpolation and Control Systems</i></a>.  Some supplemental materials are available <a href="gdc2021/index.html">here</a>.
+	<li>GDC 2018. <a href="../www.gdcvault.com/play/1024933/Denial-of-Service.html">Denial-of-Service Mitigation</a>.
+</ul>
+</p>
+<h1>FAQ</h1>
+
+<h2>Where can I get a physical copy?</h2>
+The book is now out of print, but you can probably find a used copy on
+<a href="../amazon.com/Math-Primer-Graphics-Game-Development-ebook/dp/B008KZU548/index.html">amazon.com</a>.
+
+<h2>Is there a PDF or e-reader format available?</h2>
+Soon.  Note that the kindle vesion you can buy on amazon is a "print-replica"
+and not really optimized for e-readers.
+
+<h2>Who created the cover art?</h2>
+<p class="NoIndent">Eric Huang (<a href="../twitter.com/trinketeric">@TrinketEric</a>).  We worked
+together on <a>Guilty Party</a> at Wideload Games in Chicago.  Since then he created the
+<a href="../www.battlechefbrigade.com/index.html">Battle Chef</a> games.
+</p>
+
+<h2>Can you recommend an open-source network transport library for games?</h2>
+<p class="NoIndent">
+I get this question all the time, and I'm so glad you asked.  Yes, please check out
+<a href="../github.com/ValveSoftware/GameNetworkingSockets.html">GameNetworkingSockets</a>.
+</p>
+
+<h2>Where are the resources for the first edition?</h2>
+<div class="Display Figure Wrap" style="width:25%; height:auto;">
+	<div class="Body">
+        <img src="1st_edition/1st_edition_cover.png">
+    </div>
+	<span class="Caption"><span class="Label">Figure&#160;1</span><span class="CaptionText">Recycle any copies you own immediately</span></span>
+</div>
+<p class="NoIndent">
+The first edition was published in 2002.  You can tell it was 2002 because the cover
+had a head rendered in <i>3DS Max</i> with rad math stuff projected onto it.  It absolutely
+<i>screamed</i> "This is cool high tech math!"  Coordinate axes protruded from its ears and forehead
+like a <i>Tron</i> version of the Q-Tip scene from <i>Better Off Dead</i>.
+</p>
+<p>
+Like I said, it was pretty high tech.
+</p>
+<p>
+If you happen to own one of these, please do me a favor and never show it to any person,
+including yourself.  The second edition is much, <i>much</i> better.  And here it is for
+free, so why would anybody read the first one?
+</p>
+<p>What's that?  You're not disuaded?  Fine.  Here's the <a href="1st_edition/1st_edition_errata.pdf">errata</a>,
+<a href="1st_edition/answers_to_exercises_1_11.pdf">answers</a> to most of the exercises (<i>Yes</i>, they stop
+at chapter 14 and <i>no</i> I will not be providing the answers to the last few chapters.), and some 
+<a href="1st_edition/code.zip">code</a> that is literally 20 years old.
+</p>
+<div id="RightColumn"></div>
+</div>
+</body>
+<script>
+	var body = document.getElementById('body');
+	var lightmode = ( window.localStorage && parseInt( window.localStorage.getItem( 'lightMode' ) ) ) ? 1 : 0;
+	if ( lightmode )
+		body.classList.add( "LightMode" );
+	document.getElementById('lightmodetoggle').onclick = function() {
+		lightmode = lightmode ? 0 : 1;
+		if ( lightmode )
+			body.classList.add( "LightMode" );
+		else
+			body.classList.remove( "LightMode" );
+		if ( window.localStorage )
+			window.localStorage.setItem( 'lightMode', lightmode )
+	}
+</script>
+
+<!-- Mirrored from gamemath.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 May 2025 17:04:21 GMT -->
+</html>

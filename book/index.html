@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from gamemath.com/book/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 May 2025 17:06:11 GMT -->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="3dmathprimer_book.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="../favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="../../www.googletagmanager.com/gtag/js6bee?id=G-YK41S9NXZG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YK41S9NXZG');
+    </script>
+<title>Contents - 3D Math Primer for Graphics and Game Development</title>
+<style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-stretchy-h > * {
+  display: table-cell;
+  width: 0;
+}
+
+mjx-stretchy-h > * > mjx-c {
+  display: inline-block;
+  transform: scalex(1.0000001);
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+  display: inline-block;
+  padding: .001em 0;
+  width: initial;
+}
+
+mjx-stretchy-h > mjx-ext {
+  overflow: hidden;
+  width: 100%;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+  transform: scalex(500);
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c {
+  width: 0;
+}
+
+mjx-stretchy-h > mjx-beg > mjx-c {
+  margin-right: -.1em;
+}
+
+mjx-stretchy-h > mjx-end > mjx-c {
+  margin-left: -.1em;
+}
+
+mjx-stretchy-v {
+  display: inline-block;
+}
+
+mjx-stretchy-v > * {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-beg {
+  height: 0;
+}
+
+mjx-stretchy-v > mjx-end > mjx-c {
+  display: block;
+}
+
+mjx-stretchy-v > * > mjx-c {
+  transform: scaley(1.0000001);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c::before {
+  width: initial;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c {
+  transform: scaleY(500) translateY(.1em);
+  overflow: visible;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0px;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c1D48F.TEX-BI::before {
+  padding: 0.452em 0.713em 0.008em 0;
+  content: "n";
+}
+
+mjx-c.mjx-c1D7D0.TEX-B::before {
+  padding: 0.654em 0.575em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c1D7D1.TEX-B::before {
+  padding: 0.655em 0.575em 0.011em 0;
+  content: "3";
+}
+
+mjx-c.mjx-c1D7D2.TEX-B::before {
+  padding: 0.656em 0.575em 0 0;
+  content: "4";
+}
+
+mjx-c.mjx-cD7.TEX-B::before {
+  padding: 0.53em 0.894em 0.028em 0;
+  content: "\D7";
+}
+</style></head><body id="body">
+<script>
+    var body = document.getElementById('body');
+    var lightmode = ( parseInt( window.localStorage && window.localStorage.getItem( 'lightMode' ) ) ) ? 1 : 0;
+    if ( lightmode )
+        body.classList.add( "LightMode" );
+</script>
+<div id="BodyContainer">
+<div id="LeftColumn"></div>
+<div id="MainColumn">
+
+<div class="ChapterTitleSection">
+    <div class="ChapterTitle">Contents
+<img style="float:right; width:1em; height:1em" id="lightmodetoggle" src="../light_dark_toggle.png">
+</div>
+<script>
+    document.getElementById('lightmodetoggle').onclick = function() {
+        lightmode = lightmode ? 0 : 1;
+        if ( lightmode )
+            body.classList.add( "LightMode" );
+        else
+            body.classList.remove( "LightMode" );
+        if ( window.localStorage )
+            window.localStorage.setItem( 'lightMode', lightmode )
+    }
+</script>
+</div><div class="TableOfContents">
+<div class="TocEntry TocChapter"><span class="TocNum"></span><a class="TocTitle" href="intro.html">Introduction</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">1</span><a class="TocTitle" href="cartesianspace.html">Cartesian Coordinate Systems</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">1.1</span><a class="TocTitle" href="cartesianspace.html#1d">1D Mathematics</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">1.2</span><a class="TocTitle" href="cartesianspace.html#2d">2D Cartesian Space</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">1.2.1</span><a class="TocTitle" href="cartesianspace.html#2d_cartesia">An Example: The Hypothetical City of Cartesia</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">1.2.2</span><a class="TocTitle" href="cartesianspace.html#2d_arbitrary">Arbitrary 2D Coordinate Spaces</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">1.2.3</span><a class="TocTitle" href="cartesianspace.html#2d_locatepoints">Specifying Locations in 2D Using Cartesian Coordinates</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">1.3</span><a class="TocTitle" href="cartesianspace.html#3d_cartesian">3D Cartesian Space</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">1.3.1</span><a class="TocTitle" href="cartesianspace.html#3d_zaxis">Extra Dimension, Extra Axis</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">1.3.2</span><a class="TocTitle" href="cartesianspace.html#3d_locatepoints">Specifying Locations in 3D</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">1.3.3</span><a class="TocTitle" href="cartesianspace.html#3d_hands">Left-handed versus Right-handed Coordinate Spaces</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">1.3.4</span><a class="TocTitle" href="cartesianspace.html#3d_conventions">Some Important Conventions Used in This Book</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">1.4</span><a class="TocTitle" href="cartesianspace.html#odds_and_ends">Odds and Ends</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">1.4.1</span><a class="TocTitle" href="cartesianspace.html#summation_notation">Summation and Product Notation</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">1.4.2</span><a class="TocTitle" href="cartesianspace.html#interval_notation">Interval Notation</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">1.4.3</span><a class="TocTitle" href="cartesianspace.html#angles_degrees_radians">Angles, Degrees, and Radians</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">1.4.4</span><a class="TocTitle" href="cartesianspace.html#trig_functions">Trig Functions</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">1.4.5</span><a class="TocTitle" href="cartesianspace.html#trig_identities">Trig Identities</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">1.5</span><a class="TocTitle" href="cartesianspace.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">2</span><a class="TocTitle" href="vectors.html">Vectors</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">2.1</span><a class="TocTitle" href="vectors.html#math_definition">Mathematical Definition of Vector,<br> and Other Boring Stuff</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">2.2</span><a class="TocTitle" href="vectors.html#geometric_definition">Geometric Definition of Vector</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">2.3</span><a class="TocTitle" href="vectors.html#specifying">Specifying Vectors with Cartesian Coordinates</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.3.1</span><a class="TocTitle" href="vectors.html#series_of_displacements">Vector as a Sequence of Displacements</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">2.3.2</span><a class="TocTitle" href="vectors.html#zero_vector">The Zero Vector</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">2.4</span><a class="TocTitle" href="vectors.html#vectors_vs_points">Vectors versus Points</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">2.4.1</span><a class="TocTitle" href="vectors.html#relative_position">Relative Position</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.4.2</span><a class="TocTitle" href="vectors.html#relationship_points_vectors">The Relationship between Points and Vectors</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">2.4.3</span><a class="TocTitle" href="vectors.html#everything_is_relative">It's All Relative</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">2.5</span><a class="TocTitle" href="vectors.html#vector_negation">Negating a Vector</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.5.1</span><a class="TocTitle" href="vectors.html#vector_negation_math">Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.5.2</span><a class="TocTitle" href="vectors.html#vector_negation_geometry">Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">2.6</span><a class="TocTitle" href="vectors.html#vector_times_scalar">Vector Multiplication by a Scalar</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.6.1</span><a class="TocTitle" href="vectors.html#vector_times_scalar_math">Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.6.2</span><a class="TocTitle" href="vectors.html#vector_times_scalar_geometry">Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">2.7</span><a class="TocTitle" href="vectors.html#vector_addition">Vector Addition and Subtraction</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.7.1</span><a class="TocTitle" href="vectors.html#vector_addition_math">Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.7.2</span><a class="TocTitle" href="vectors.html#vector_addition_geometry">Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.7.3</span><a class="TocTitle" href="vectors.html#vector_between_points">Displacement Vector from One Point to Another</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">2.8</span><a class="TocTitle" href="vectors.html#vector_magnitude">Vector Magnitude (Length)</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.8.1</span><a class="TocTitle" href="vectors.html#vector_magnitude_math">Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.8.2</span><a class="TocTitle" href="vectors.html#vector_magnitude_geometry">Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">2.9</span><a class="TocTitle" href="vectors.html#normalized_vectors">Unit Vectors</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.9.1</span><a class="TocTitle" href="vectors.html#normalized_vectors_math">Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.9.2</span><a class="TocTitle" href="vectors.html#normalized_vectors_geometry">Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">2.10</span><a class="TocTitle" href="vectors.html#distance_formula">The Distance Formula</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">2.11</span><a class="TocTitle" href="vectors.html#dot_product">Vector Dot Product</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.11.1</span><a class="TocTitle" href="vectors.html#dot_product_math">Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.11.2</span><a class="TocTitle" href="vectors.html#dot_product_geometry">Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">2.12</span><a class="TocTitle" href="vectors.html#cross_product">Vector Cross Product</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.12.1</span><a class="TocTitle" href="vectors.html#cross_product_math">Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">2.12.2</span><a class="TocTitle" href="vectors.html#cross_product_geometry">Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">2.13</span><a class="TocTitle" href="vectors.html#vector_algebra_identities">Linear Algebra Identities</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">2.14</span><a class="TocTitle" href="vectors.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">3</span><a class="TocTitle" href="multiplespaces.html">Multiple Coordinate Spaces</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">3.1</span><a class="TocTitle" href="multiplespaces.html#why">Why Bother with Multiple Coordinate Spaces?</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">3.2</span><a class="TocTitle" href="multiplespaces.html#examples">Some Useful Coordinate Spaces</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">3.2.1</span><a class="TocTitle" href="multiplespaces.html#world_space">World Space</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">3.2.2</span><a class="TocTitle" href="multiplespaces.html#object_space">Object Space</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">3.2.3</span><a class="TocTitle" href="multiplespaces.html#camera">Camera Space</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">3.2.4</span><a class="TocTitle" href="multiplespaces.html#upright_space">Upright Space</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">3.3</span><a class="TocTitle" href="multiplespaces.html#transformations">Basis Vectors and Coordinate Space<br> Transformations</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">3.3.1</span><a class="TocTitle" href="multiplespaces.html#two_perspectives">Dual Perspectives</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">3.3.2</span><a class="TocTitle" href="multiplespaces.html#specifying_spaces">Specifying Coordinate Spaces</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">3.3.3</span><a class="TocTitle" href="multiplespaces.html#basis_vectors">Basis Vectors</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">3.4</span><a class="TocTitle" href="multiplespaces.html#nested_spaces">Nested Coordinate Spaces</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">3.5</span><a class="TocTitle" href="multiplespaces.html#defense_of_upright_space">In Defense of Upright Space</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">3.6</span><a class="TocTitle" href="multiplespaces.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">4</span><a class="TocTitle" href="matrixintro.html">Introduction to Matrices</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">4.1</span><a class="TocTitle" href="matrixintro.html#math_definition">Mathematical Definition of Matrix</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">4.1.1</span><a class="TocTitle" href="matrixintro.html#notation">Matrix Dimensions and Notation</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">4.1.2</span><a class="TocTitle" href="matrixintro.html#square_matrices">Square Matrices</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">4.1.3</span><a class="TocTitle" href="matrixintro.html#vectors_as_matrices">Vectors as Matrices</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">4.1.4</span><a class="TocTitle" href="matrixintro.html#matrix_transposition">Matrix Transposition</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">4.1.5</span><a class="TocTitle" href="matrixintro.html#matrix_times_scalar">Multiplying a Matrix with a Scalar</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">4.1.6</span><a class="TocTitle" href="matrixintro.html#matrix_times_matrix">Multiplying Two Matrices</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">4.1.7</span><a class="TocTitle" href="matrixintro.html#matrix_times_vector">Multiplying a Vector and a Matrix</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">4.1.8</span><a class="TocTitle" href="matrixintro.html#row_vs_column_vectors">Row versus Column Vectors</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">4.2</span><a class="TocTitle" href="matrixintro.html#geometric_definition">Geometric Interpretation of Matrix</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">4.3</span><a class="TocTitle" href="matrixintro.html#bigger_picture">The Bigger Picture of Linear Algebra</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">4.4</span><a class="TocTitle" href="matrixintro.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">5</span><a class="TocTitle" href="matrixtransforms.html">Matrices and Linear Transformations</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">5.1</span><a class="TocTitle" href="matrixtransforms.html#rotation">Rotation</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">5.1.1</span><a class="TocTitle" href="matrixtransforms.html#rotation_2d">Rotation in 2D</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.1.2</span><a class="TocTitle" href="matrixtransforms.html#rotation_3d_cardinal_axis">3D Rotation about Cardinal Axes</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.1.3</span><a class="TocTitle" href="matrixtransforms.html#rotation_3d_arbitrary_axis">3D Rotation about an Arbitrary Axis</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">5.2</span><a class="TocTitle" href="matrixtransforms.html#scale">Scale</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.2.1</span><a class="TocTitle" href="matrixtransforms.html#scale_cardinal_axes">Scaling along the Cardinal Axes</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.2.2</span><a class="TocTitle" href="matrixtransforms.html#scale_arbitrary_axis">Scaling in an Arbitrary Direction</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">5.3</span><a class="TocTitle" href="matrixtransforms.html#orthographic_projection">Orthographic Projection</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.3.1</span><a class="TocTitle" href="matrixtransforms.html#orthographic_projection_cardinal_axis">Projecting onto a Cardinal Axis or Plane</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.3.2</span><a class="TocTitle" href="matrixtransforms.html#orthographic_projection_arbitrary_axis">Projecting onto an Arbitrary Line or Plane</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">5.4</span><a class="TocTitle" href="matrixtransforms.html#reflection">Reflection</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">5.5</span><a class="TocTitle" href="matrixtransforms.html#shearing">Shearing</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">5.6</span><a class="TocTitle" href="matrixtransforms.html#combining_transformations">Combining Transformations</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">5.7</span><a class="TocTitle" href="matrixtransforms.html#classes_of_transformations">Classes of Transformations</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.7.1</span><a class="TocTitle" href="matrixtransforms.html#linear_transformations">Linear Transformations</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.7.2</span><a class="TocTitle" href="matrixtransforms.html#affine_transformations">Affine Transformations</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.7.3</span><a class="TocTitle" href="matrixtransforms.html#invertible_transformations">Invertible Transformations</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.7.4</span><a class="TocTitle" href="matrixtransforms.html#angle_preserving_transformations">Angle-Preserving Transformations</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.7.5</span><a class="TocTitle" href="matrixtransforms.html#orthogonal_transformations">Orthogonal Transformations</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.7.6</span><a class="TocTitle" href="matrixtransforms.html#rigid_body_transformations">Rigid Body Transformations</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">5.7.7</span><a class="TocTitle" href="matrixtransforms.html#types_of_transformations_summary">Summary of Types of Transformations</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">5.8</span><a class="TocTitle" href="matrixtransforms.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">6</span><a class="TocTitle" href="matrixmore.html">More on Matrices</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">6.1</span><a class="TocTitle" href="matrixmore.html#determinant">Determinant of a Matrix</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.1.1</span><a class="TocTitle" href="matrixmore.html#determinant_2x2_3x3">Determinants of <mjx-container class="MathJax" jax="CHTML" style="font-size: 100%; position: relative" role="presentation">
+<mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7D0 TEX-B"></mjx-c></mjx-mn><mjx-mo class="mjx-b" space="3"><mjx-c class="mjx-cD7 TEX-B"></mjx-c></mjx-mo><mjx-mn class="mjx-b" space="3"><mjx-c class="mjx-c1D7D0 TEX-B"></mjx-c></mjx-mn>
+</mjx-math>
+<mjx-assistive-mml role="presentation" unselectable="on" display="inline">
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mn mathvariant="bold">2</mn><mo mathvariant="bold">&#215;</mo><mn mathvariant="bold">2</mn></math>
+</mjx-assistive-mml>
+</mjx-container> and <mjx-container class="MathJax" jax="CHTML" style="font-size: 100%; position: relative" role="presentation">
+<mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7D1 TEX-B"></mjx-c></mjx-mn><mjx-mo class="mjx-b" space="3"><mjx-c class="mjx-cD7 TEX-B"></mjx-c></mjx-mo><mjx-mn class="mjx-b" space="3"><mjx-c class="mjx-c1D7D1 TEX-B"></mjx-c></mjx-mn>
+</mjx-math>
+<mjx-assistive-mml role="presentation" unselectable="on" display="inline">
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mn mathvariant="bold">3</mn><mo mathvariant="bold">&#215;</mo><mn mathvariant="bold">3</mn></math>
+</mjx-assistive-mml>
+</mjx-container> matrices</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">6.1.2</span><a class="TocTitle" href="matrixmore.html#minors_cofactors">Minors and Cofactors</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.1.3</span><a class="TocTitle" href="matrixmore.html#determinant_arbitrary_size">Determinants of Arbitrary <mjx-container class="MathJax" jax="CHTML" style="font-size: 100%; position: relative" role="presentation">
+<mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-b mjx-i"><mjx-c class="mjx-c1D48F TEX-BI"></mjx-c></mjx-mi><mjx-mo class="mjx-b" space="3"><mjx-c class="mjx-cD7 TEX-B"></mjx-c></mjx-mo><mjx-mi class="mjx-b mjx-i" space="3"><mjx-c class="mjx-c1D48F TEX-BI"></mjx-c></mjx-mi>
+</mjx-math>
+<mjx-assistive-mml role="presentation" unselectable="on" display="inline">
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold-italic">n</mi><mo mathvariant="bold">&#215;</mo><mi mathvariant="bold-italic">n</mi></math>
+</mjx-assistive-mml>
+</mjx-container> Matrices</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.1.4</span><a class="TocTitle" href="matrixmore.html#determinant_geometry">Geometric Interpretation of Determinant</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">6.2</span><a class="TocTitle" href="matrixmore.html#inverse">Inverse of a Matrix</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">6.2.1</span><a class="TocTitle" href="matrixmore.html#classical_adjoint">The Classical Adjoint</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.2.2</span><a class="TocTitle" href="matrixmore.html#inverse_math">Matrix Inverse&#8212;Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.2.3</span><a class="TocTitle" href="matrixmore.html#inverse_geometry">Matrix Inverse&#8212;Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">6.3</span><a class="TocTitle" href="matrixmore.html#orthogonal_matrices">Orthogonal Matrices</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.3.1</span><a class="TocTitle" href="matrixmore.html#orthogonal_matrices_math">Orthogonal Matrices&#8212;Official Linear Algebra Rules</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.3.2</span><a class="TocTitle" href="matrixmore.html#orthogonal_matrices_geometry">Orthogonal Matrices&#8212;Geometric Interpretation</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.3.3</span><a class="TocTitle" href="matrixmore.html#orthonogal_matrices_orthogonalizing">Orthogonalizing a Matrix</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">6.4</span><a class="TocTitle" href="matrixmore.html#homogeneous_matrices">
+<mjx-container class="MathJax" jax="CHTML" style="font-size: 100%; position: relative" role="presentation">
+<mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7D2 TEX-B"></mjx-c></mjx-mn><mjx-mo class="mjx-b" space="3"><mjx-c class="mjx-cD7 TEX-B"></mjx-c></mjx-mo><mjx-mn class="mjx-b" space="3"><mjx-c class="mjx-c1D7D2 TEX-B"></mjx-c></mjx-mn>
+</mjx-math>
+<mjx-assistive-mml role="presentation" unselectable="on" display="inline">
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mn mathvariant="bold">4</mn><mo mathvariant="bold">&#215;</mo><mn mathvariant="bold">4</mn></math>
+</mjx-assistive-mml>
+</mjx-container> Homogeneous Matrices</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.4.1</span><a class="TocTitle" href="matrixmore.html#4d_homogeneous_space">4D Homogeneous Space</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.4.2</span><a class="TocTitle" href="matrixmore.html#4x4_translation_matrices">
+<mjx-container class="MathJax" jax="CHTML" style="font-size: 100%; position: relative" role="presentation">
+<mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7D2 TEX-B"></mjx-c></mjx-mn><mjx-mo class="mjx-b" space="3"><mjx-c class="mjx-cD7 TEX-B"></mjx-c></mjx-mo><mjx-mn class="mjx-b" space="3"><mjx-c class="mjx-c1D7D2 TEX-B"></mjx-c></mjx-mn>
+</mjx-math>
+<mjx-assistive-mml role="presentation" unselectable="on" display="inline">
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mn mathvariant="bold">4</mn><mo mathvariant="bold">&#215;</mo><mn mathvariant="bold">4</mn></math>
+</mjx-assistive-mml>
+</mjx-container> Translation Matrices</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.4.3</span><a class="TocTitle" href="matrixmore.html#general_affine_transformations">General Affine Transformations</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">6.5</span><a class="TocTitle" href="matrixmore.html#perspective_projection">
+<mjx-container class="MathJax" jax="CHTML" style="font-size: 100%; position: relative" role="presentation">
+<mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7D2 TEX-B"></mjx-c></mjx-mn><mjx-mo class="mjx-b" space="3"><mjx-c class="mjx-cD7 TEX-B"></mjx-c></mjx-mo><mjx-mn class="mjx-b" space="3"><mjx-c class="mjx-c1D7D2 TEX-B"></mjx-c></mjx-mn>
+</mjx-math>
+<mjx-assistive-mml role="presentation" unselectable="on" display="inline">
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mn mathvariant="bold">4</mn><mo mathvariant="bold">&#215;</mo><mn mathvariant="bold">4</mn></math>
+</mjx-assistive-mml>
+</mjx-container> Matrices and Perspective Projection</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">6.5.1</span><a class="TocTitle" href="matrixmore.html#pinhole_camera">A Pinhole Camera</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">6.5.2</span><a class="TocTitle" href="matrixmore.html#perspective_projection_matrix">Perspective Projection Matrices</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">6.6</span><a class="TocTitle" href="matrixmore.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">7</span><a class="TocTitle" href="polarspace.html">Polar Coordinate Systems</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">7.1</span><a class="TocTitle" href="polarspace.html#2d_polar_space">2D Polar Space</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">7.1.1</span><a class="TocTitle" href="polarspace.html#2d_polar_coordinates">Locating Points by Using 2D Polar Coordinates</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">7.1.2</span><a class="TocTitle" href="polarspace.html#polar_aliasing">Aliasing</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">7.1.3</span><a class="TocTitle" href="polarspace.html#polar_conversion_2d">Converting between Cartesian and<br> Polar Coordinates in 2D</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">7.2</span><a class="TocTitle" href="polarspace.html#polar_uses">Why Would Anybody Use Polar Coordinates?</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">7.3</span><a class="TocTitle" href="polarspace.html#3d_polar">3D Polar Space</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">7.3.1</span><a class="TocTitle" href="polarspace.html#cylindrical_coordinates">Cylindrical Coordinates</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">7.3.2</span><a class="TocTitle" href="polarspace.html#spherical_coordinates">Spherical Coordinates</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">7.3.3</span><a class="TocTitle" href="polarspace.html#polar_conventions">Some Polar Conventions Useful in 3D Virtual Worlds</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">7.3.4</span><a class="TocTitle" href="polarspace.html#spherical_aliasing">Aliasing of Spherical Coordinates</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">7.3.5</span><a class="TocTitle" href="polarspace.html#spherical_cartesian_conversion">Converting between Spherical and Cartesian Coordinates</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">7.4</span><a class="TocTitle" href="polarspace.html#polar_vectors">Using Polar Coordinates to Specify Vectors</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">7.5</span><a class="TocTitle" href="polarspace.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">8</span><a class="TocTitle" href="orient.html">Rotation in Three Dimensions</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">8.1</span><a class="TocTitle" href="orient.html#terminology">What Exactly is &#8220;Orientation&#8221;?</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">8.2</span><a class="TocTitle" href="orient.html#matrix_form">Matrix Form</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">8.2.1</span><a class="TocTitle" href="orient.html#matrix_form_which_matrix">Which Matrix?</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.2.2</span><a class="TocTitle" href="orient.html#matrix_direction_cosines">Direction Cosines Matrix</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.2.3</span><a class="TocTitle" href="orient.html#matrix_form_advantages">Advantages of Matrix Form</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.2.4</span><a class="TocTitle" href="orient.html#matrix_form_disadvantages">Disadvantages of Matrix Form</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">8.2.5</span><a class="TocTitle" href="orient.html#matrix_form_summary">Summary of Matrix Form</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">8.3</span><a class="TocTitle" href="orient.html#euler_angles">Euler Angles</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.3.1</span><a class="TocTitle" href="orient.html#euler_angles_description">What Are Euler Angles?</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.3.2</span><a class="TocTitle" href="orient.html#euler_angles_other_conventions">Other Euler Angle Conventions</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.3.3</span><a class="TocTitle" href="orient.html#euler_angles_advantages">Advantages of Euler Angles</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.3.4</span><a class="TocTitle" href="orient.html#euler_angles_disadvantages">Disadvantages of Euler Angles</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">8.3.5</span><a class="TocTitle" href="orient.html#euler_angles_summary">Summary of Euler Angles</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">8.4</span><a class="TocTitle" href="orient.html#axis_angle_exponential_map">Axis-Angle and Exponential Map<br> Representations</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">8.5</span><a class="TocTitle" href="orient.html#quaternions">Quaternions</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">8.5.1</span><a class="TocTitle" href="orient.html#quaternion_notation">Quaternion Notation</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.2</span><a class="TocTitle" href="orient.html#quaternion_geometry">What Do Those Four Numbers Mean?</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">8.5.3</span><a class="TocTitle" href="orient.html#quaternion_negation">Quaternion Negation</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">8.5.4</span><a class="TocTitle" href="orient.html#quaternion_identity">Identity Quaternion(s)</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">8.5.5</span><a class="TocTitle" href="orient.html#quaternion_magnitude">Quaternion Magnitude</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.6</span><a class="TocTitle" href="orient.html#quaternion_conjugate">Quaternion Conjugate and Inverse</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.7</span><a class="TocTitle" href="orient.html#quaternion_cross_product">Quaternion Multiplication</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.8</span><a class="TocTitle" href="orient.html#quaternion_difference">Quaternion &#8220;Difference&#8221;</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.9</span><a class="TocTitle" href="orient.html#quaternion_dot_product">Quaternion Dot Product</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.10</span><a class="TocTitle" href="orient.html#quaternion_helper_operations">Quaternion log, exp, and Multiplication by a Scalar</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.11</span><a class="TocTitle" href="orient.html#quaternion_exponentiation">Quaternion Exponentiation</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.12</span><a class="TocTitle" href="orient.html#quaternion_slerp">Quaternion Interpolation, a.k.a. Slerp</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.13</span><a class="TocTitle" href="orient.html#quaternion_advantages_disadvantages">Advantages and Disadvantages of Quaternions</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.5.14</span><a class="TocTitle" href="orient.html#quaternion_complex_number">Quaternions as Complex Numbers</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">8.5.15</span><a class="TocTitle" href="orient.html#quaternion_summary">Summary of Quaternions</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">8.6</span><a class="TocTitle" href="orient.html#comparison_of_methods">Comparison of Methods</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">8.7</span><a class="TocTitle" href="orient.html#converting_between_forms">Converting between Representations</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.7.1</span><a class="TocTitle" href="orient.html#euler_to_matrix">Converting Euler Angles to a Matrix</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.7.2</span><a class="TocTitle" href="orient.html#matrix_to_euler">Converting a Matrix to Euler angles</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.7.3</span><a class="TocTitle" href="orient.html#quaternion_to_matrix">Converting a Quaternion to a Matrix</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.7.4</span><a class="TocTitle" href="orient.html#matrix_to_quaternion">Converting a Matrix to a Quaternion</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.7.5</span><a class="TocTitle" href="orient.html#euler_angles_to_quaternion">Converting Euler Angles to a Quaternion</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">8.7.6</span><a class="TocTitle" href="orient.html#quaternion_to_euler_angles">Converting a Quaternion to Euler Angles</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">8.8</span><a class="TocTitle" href="orient.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">9</span><a class="TocTitle" href="geomprims.html">Geometric Primitives</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">9.1</span><a class="TocTitle" href="geomprims.html#representation_techniques">Representation Techniques</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">9.2</span><a class="TocTitle" href="geomprims.html#lines_and_rays">Lines and Rays</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">9.2.1</span><a class="TocTitle" href="geomprims.html#rays">Rays</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.2.2</span><a class="TocTitle" href="geomprims.html#line_infinite_2d">Special 2D Representations of Lines</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.2.3</span><a class="TocTitle" href="geomprims.html#ray_line_converting_forms">Converting between Representations</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">9.3</span><a class="TocTitle" href="geomprims.html#spheres_and_circles">Spheres and Circles</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">9.4</span><a class="TocTitle" href="geomprims.html#bounding_boxes">Bounding Boxes</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">9.4.1</span><a class="TocTitle" href="geomprims.html#representing_aabbs">Representing AABBs</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">9.4.2</span><a class="TocTitle" href="geomprims.html#computing_aabbs">Computing AABBs</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.4.3</span><a class="TocTitle" href="geomprims.html#aabb_vs_bounding_sphere">AABBs versus Bounding Spheres</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">9.4.4</span><a class="TocTitle" href="geomprims.html#transforming_aabbs">Transforming AABBs</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">9.5</span><a class="TocTitle" href="geomprims.html#planes">Planes</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.5.1</span><a class="TocTitle" href="geomprims.html#plane_equation">The Plane Equation: An Implicit Definition of a Plane</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.5.2</span><a class="TocTitle" href="geomprims.html#plane_three_points">Defining a Plane by Using Three Points</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.5.3</span><a class="TocTitle" href="geomprims.html#plane_best_fit">&#8220;Best Fit&#8221; Plane for More than Three Points</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.5.4</span><a class="TocTitle" href="geomprims.html#plane_distance_to_point">Distance from Point to Plane</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">9.6</span><a class="TocTitle" href="geomprims.html#triangles">Triangles</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">9.6.1</span><a class="TocTitle" href="geomprims.html#triangle_notation">Notation</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">9.6.2</span><a class="TocTitle" href="geomprims.html#triangle_area">Area of a Triangle</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.6.3</span><a class="TocTitle" href="geomprims.html#triangle_barycentric_space">Barycentric Space</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.6.4</span><a class="TocTitle" href="geomprims.html#triangle_barycentric_computing">Calculating Barycentric Coordinates</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">9.6.5</span><a class="TocTitle" href="geomprims.html#triangle_special_points">Special Points</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">9.7</span><a class="TocTitle" href="geomprims.html#polygons">Polygons</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.7.1</span><a class="TocTitle" href="geomprims.html#polygons_simple_vs_complex">Simple versus Complex Polygons</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.7.2</span><a class="TocTitle" href="geomprims.html#polygons_convex_vs_concave">Convex versus Concave Polygons</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">9.7.3</span><a class="TocTitle" href="geomprims.html#polygons_triangulation">Triangulation and Fanning</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">9.8</span><a class="TocTitle" href="geomprims.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">10</span><a class="TocTitle" href="graphics.html">Mathematical Topics<br> from 3D Graphics</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.1</span><a class="TocTitle" href="graphics.html#how_graphics_works">How Graphics Works</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.1.1</span><a class="TocTitle" href="graphics.html#rendering_algorithms">The Two Major Approaches to Rendering</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.1.2</span><a class="TocTitle" href="graphics.html#brdf">Describing Surface Properties: The BRDF</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.1.3</span><a class="TocTitle" href="graphics.html#color_and_radiometry">A Very Brief Introduction to Colorimetry<br> and Radiometry</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.1.4</span><a class="TocTitle" href="graphics.html#rendering_equation">The Rendering Equation</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.2</span><a class="TocTitle" href="graphics.html#viewing_in_3d">Viewing in 3D</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.2.1</span><a class="TocTitle" href="graphics.html#output_window">Specifying the Output Window</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.2.2</span><a class="TocTitle" href="graphics.html#pixel_aspect_ratio">Pixel Aspect Ratio</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.2.3</span><a class="TocTitle" href="graphics.html#view_frustum">The View Frustum</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.2.4</span><a class="TocTitle" href="graphics.html#field_of_view">Field of View and Zoom</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.2.5</span><a class="TocTitle" href="graphics.html#orthographic_projection">Orthographic Projection</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.3</span><a class="TocTitle" href="graphics.html#coordinate_spaces">Coordinate Spaces</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.3.1</span><a class="TocTitle" href="graphics.html#object_world_camera_space">Model, World, and Camera Space</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.3.2</span><a class="TocTitle" href="graphics.html#clip_space">Clip Space and the Clip Matrix</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.3.3</span><a class="TocTitle" href="graphics.html#clip_space_projection">The Clip Matrix: Preparing for Projection</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.3.4</span><a class="TocTitle" href="graphics.html#clip_space_scale">The Clip Matrix: Applying Zoom and<br> Preparing for Clipping</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.3.5</span><a class="TocTitle" href="graphics.html#screen_space">Screen Space</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.3.6</span><a class="TocTitle" href="graphics.html#coordinate_spaces_summary">Summary of Coordinate Spaces</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.4</span><a class="TocTitle" href="graphics.html#polygon_meshes">Polygon Meshes</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.4.1</span><a class="TocTitle" href="graphics.html#indexed_triangle_mesh">Indexed Triangle Mesh</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.4.2</span><a class="TocTitle" href="graphics.html#surface_normals">Surface Normals</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.5</span><a class="TocTitle" href="graphics.html#texture_mapping">Texture Mapping</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">10.6</span><a class="TocTitle" href="graphics.html#standard_local_lighting_model">The Standard Local Lighting Model</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.6.1</span><a class="TocTitle" href="graphics.html#lighting_equation_overview">The Standard Lighting Equation: Overview</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.6.2</span><a class="TocTitle" href="graphics.html#specular_component">The Specular Component</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.6.3</span><a class="TocTitle" href="graphics.html#diffuse_component">The Diffuse Component</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.6.4</span><a class="TocTitle" href="graphics.html#ambient_and_emissive_components">The Ambient and Emmissive Components</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.6.5</span><a class="TocTitle" href="graphics.html#lighting_equation_summary">The Lighting Equation: Putting It All Together</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.6.6</span><a class="TocTitle" href="graphics.html#lighting_equation_limitations">Limitations of the Standard Model</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.6.7</span><a class="TocTitle" href="graphics.html#flat_gouraud_shading">Flat and Gouraud Shading</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.7</span><a class="TocTitle" href="graphics.html#light_sources">Light Sources</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.7.1</span><a class="TocTitle" href="graphics.html#standard_abstract_lights">Standard Abstract Light Types</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.7.2</span><a class="TocTitle" href="graphics.html#light_attenuation">Light Attenuation</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.7.3</span><a class="TocTitle" href="graphics.html#volumetric_lights">
+<i>Doom</i>-style Volumetric Lights</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.7.4</span><a class="TocTitle" href="graphics.html#precomputed_light">Precalculated Lighting</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.8</span><a class="TocTitle" href="graphics.html#skeletal_animation">Skeletal Animation</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.9</span><a class="TocTitle" href="graphics.html#bump_mapping">Bump Mapping</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.9.1</span><a class="TocTitle" href="graphics.html#tangent_space">Tangent Space</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.9.2</span><a class="TocTitle" href="graphics.html#computing_basis_vectors">Calculating Tangent Space Basis Vectors</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">10.10</span><a class="TocTitle" href="graphics.html#realtime_graphics_pipeline">The Real-Time Graphics Pipeline</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.10.1</span><a class="TocTitle" href="graphics.html#buffers">Buffers</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.10.2</span><a class="TocTitle" href="graphics.html#geometry_delivery">Delivering the Geometry</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.10.3</span><a class="TocTitle" href="graphics.html#vertex_operations">Vertex-Level Operations</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.10.4</span><a class="TocTitle" href="graphics.html#clipping">Clipping</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.10.5</span><a class="TocTitle" href="graphics.html#backface_culling">Backface Culling</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.10.6</span><a class="TocTitle" href="graphics.html#rasterization_shading_and_output">Rasterization, Shading, and Output</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.11</span><a class="TocTitle" href="graphics.html#hlsl_examples">Some HLSL Examples</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.11.1</span><a class="TocTitle" href="graphics.html#hlsl_decal">Decal Shading and HLSL Basics</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">10.11.2</span><a class="TocTitle" href="graphics.html#hlsl_basic_per_pixel_lighting">Basic Per-Pixel Blinn-Phong Lighting</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.11.3</span><a class="TocTitle" href="graphics.html#hlsl_gouraud_lighting">Gouraud Shading</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.11.4</span><a class="TocTitle" href="graphics.html#hlsl_bump_mapping">Bump Mapping</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">10.11.5</span><a class="TocTitle" href="graphics.html#hlsl_skinned mesh">Skinned Mesh</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.12</span><a class="TocTitle" href="graphics.html#further_reading">Further Reading</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">10.13</span><a class="TocTitle" href="graphics.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter">
+<span class="TocNum">11</span><a class="TocTitle" href="kinematics_calculus.html">Mechanics 1: Linear Kinematics and Calculus</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">11.1</span><a class="TocTitle" href="kinematics_calculus.html#overview">Overview and Other Expectation-Reducing<br> Remarks</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.1.1</span><a class="TocTitle" href="kinematics_calculus.html#whats_left_out">What is Left Out?</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.1.2</span><a class="TocTitle" href="kinematics_calculus.html#simplifying_assumptions">Some Helpful Lies about Our Universe</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">11.2</span><a class="TocTitle" href="kinematics_calculus.html#quantities_and_units">Basic Quantities and Units</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">11.3</span><a class="TocTitle" href="kinematics_calculus.html#average_velocity">Average Velocity</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">11.4</span><a class="TocTitle" href="kinematics_calculus.html#instantaneous_velocity">Instantaneous Velocity and the Derivative</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.4.1</span><a class="TocTitle" href="kinematics_calculus.html#limit_arguments">Limit Arguments and the Definition of the Derivative</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.4.2</span><a class="TocTitle" href="kinematics_calculus.html#examples_of_derivatives">Examples of Derivatives</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.4.3</span><a class="TocTitle" href="kinematics_calculus.html#calculating_derivatives_definition">Calculating Derivatives from the Definition</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.4.4</span><a class="TocTitle" href="kinematics_calculus.html#derivative_notations">Notations for the Derivative</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.4.5</span><a class="TocTitle" href="kinematics_calculus.html#derivative_rules">A Few Differentiation Rules and Shortcuts</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.4.6</span><a class="TocTitle" href="kinematics_calculus.html#derivatives_special_functions_taylor_series">Derivatives of Some Special Functions<br> with Taylor Series</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.4.7</span><a class="TocTitle" href="kinematics_calculus.html#derivatives_chain_rule">The Chain Rule</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">11.5</span><a class="TocTitle" href="kinematics_calculus.html#acceleration">Acceleration</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">11.6</span><a class="TocTitle" href="kinematics_calculus.html#constant_acceleration">Motion under Constant Acceleration</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">11.7</span><a class="TocTitle" href="kinematics_calculus.html#integral">The Integral</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.7.1</span><a class="TocTitle" href="kinematics_calculus.html#integral_examples">Examples of Integrals</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.7.2</span><a class="TocTitle" href="kinematics_calculus.html#integral_and_derivative">The Relationship between the Derivative<br> and the Integral</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.7.3</span><a class="TocTitle" href="kinematics_calculus.html#calculus_summary">Summary of Calculus</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">11.8</span><a class="TocTitle" href="kinematics_calculus.html#uniform_circular_motion">Uniform Circular Motion</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.8.1</span><a class="TocTitle" href="kinematics_calculus.html#uniform_circular_motion_2d">Uniform Circular Motion in the Plane</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">11.8.2</span><a class="TocTitle" href="kinematics_calculus.html#uniform_circular_motion_3d">Uniform Circular Motion in Three Dimensions</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">11.9</span><a class="TocTitle" href="kinematics_calculus.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">12</span><a class="TocTitle" href="dynamics.html">Mechanics 2: Linear and Rotational Dynamics</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">12.1</span><a class="TocTitle" href="dynamics.html#newtons_laws">Newton's Three Laws</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.1.1</span><a class="TocTitle" href="dynamics.html#force_mass">Newton's First Two Laws: Force and Mass</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">12.1.2</span><a class="TocTitle" href="dynamics.html#inertial_frames">Inertial Reference Frames</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">12.1.3</span><a class="TocTitle" href="dynamics.html#newtons_third_law">Newton's Third Law</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">12.2</span><a class="TocTitle" href="dynamics.html#some_important_force_laws">Some Simple Force Laws</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">12.2.1</span><a class="TocTitle" href="dynamics.html#force_gravity">Gravitational Force</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">12.2.2</span><a class="TocTitle" href="dynamics.html#force_friction">Frictional Forces</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">12.2.3</span><a class="TocTitle" href="dynamics.html#force_spring">Spring Forces</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">12.3</span><a class="TocTitle" href="dynamics.html#momentum">Momentum</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.3.1</span><a class="TocTitle" href="dynamics.html#momentum_conservation">Conservation of Momentum</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">12.3.2</span><a class="TocTitle" href="dynamics.html#center_of_mass">The Center of Mass</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">12.4</span><a class="TocTitle" href="dynamics.html#impulses_and_collisions">Impulsive Forces and Collisions</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.4.1</span><a class="TocTitle" href="dynamics.html#inelastic_collision">Perfectly Inelastic Collisions</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.4.2</span><a class="TocTitle" href="dynamics.html#collision_response">General Collision Response</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">12.4.3</span><a class="TocTitle" href="dynamics.html#dirac_delta">The Dirac Delta</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">12.5</span><a class="TocTitle" href="dynamics.html#rotational_dynamics">Rotational Dynamics</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.5.1</span><a class="TocTitle" href="dynamics.html#rotational_kinematics">Rotational Kinematics</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.5.2</span><a class="TocTitle" href="dynamics.html#rotational_dynamics_2d">2D Rotational Dynamics</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.5.3</span><a class="TocTitle" href="dynamics.html#rotational_dynamics_3d">3D Rotational Dynamics</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.5.4</span><a class="TocTitle" href="dynamics.html#collision_response_with_rotations">Collision Response with Rotations</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">12.6</span><a class="TocTitle" href="dynamics.html#computer_simulation">Real-Time Rigid Body Simulators</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.6.1</span><a class="TocTitle" href="dynamics.html#physics_engine_state_variables">Physics Engine State Variables</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.6.2</span><a class="TocTitle" href="dynamics.html#physics_engine_process_overview">HighLevel Overview</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">12.6.3</span><a class="TocTitle" href="dynamics.html#euler_integration">Euler Integration</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">12.6.4</span><a class="TocTitle" href="dynamics.html#integration_rotation">Integration of Rotation</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">12.7</span><a class="TocTitle" href="dynamics.html#suggested_reading">Suggested Reading</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">12.8</span><a class="TocTitle" href="dynamics.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">13</span><a class="TocTitle" href="curves.html">Curves in 3D</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">13.1</span><a class="TocTitle" href="curves.html#parametric_polynomial_curves">Parametric Polynomial Curves</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.1.1</span><a class="TocTitle" href="curves.html#parametric_curves">Parametric Curves</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.1.2</span><a class="TocTitle" href="curves.html#polynomial_curves">Polynomial Curves</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.1.3</span><a class="TocTitle" href="curves.html#matrix_notation">Matrix Notation</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.1.4</span><a class="TocTitle" href="curves.html#parametric_line">Two Trivial Types of Curves</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.1.5</span><a class="TocTitle" href="curves.html#endpoints">Endpoints in Monomial Form</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">13.1.6</span><a class="TocTitle" href="curves.html#velocities_and_tangents">Velocities and Tangents</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">13.2</span><a class="TocTitle" href="curves.html#polynomial_interpolation">Polynomial Interpolation</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.2.1</span><a class="TocTitle" href="curves.html#aitkens_algorithm">Aitken's Algorithm</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">13.2.2</span><a class="TocTitle" href="curves.html#lagrange_basis_polynomials">Lagrange Basis Polynomials</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">13.2.3</span><a class="TocTitle" href="curves.html#polynomial_interpolation_summary">Polynomial Interpolation Summary</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">13.3</span><a class="TocTitle" href="curves.html#hermite_curves">Hermite Curves</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">13.4</span><a class="TocTitle" href="curves.html#bezier_curves">B&#233;zier Curves</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">13.4.1</span><a class="TocTitle" href="curves.html#de_casteljau_algorithm">The de&#160;Casteljau Algorithm</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.4.2</span><a class="TocTitle" href="curves.html#bernstein_basis">The Bernstein Basis</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">13.4.3</span><a class="TocTitle" href="curves.html#bezier_derivatives">B&#233;zier Derivatives and Their Relationship<br> to the Hermite Form</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">13.5</span><a class="TocTitle" href="curves.html#subdivision">Subdivision</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">13.5.1</span><a class="TocTitle" href="curves.html#subdivision_monomial">Subdividing Curves in Monomial Form</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">13.5.2</span><a class="TocTitle" href="curves.html#subdivision_bezier">Subdividing Curves in B&#233;zier Form</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">13.6</span><a class="TocTitle" href="curves.html#splines">Splines</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.6.1</span><a class="TocTitle" href="curves.html#rules_of_the_game">Rules of the Game</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.6.2</span><a class="TocTitle" href="curves.html#knots">Knots</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">13.7</span><a class="TocTitle" href="curves.html#hermite_and_bezier_splines">Hermite and B&#233;zier Splines</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">13.8</span><a class="TocTitle" href="curves.html#continuity">Continuity</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.8.1</span><a class="TocTitle" href="curves.html#parametric_continuity">Parametric Continuity</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.8.2</span><a class="TocTitle" href="curves.html#geometric_continuity">Geometric Continuity</a>
+</div>
+<div class="TocEntry TocSubSection">
+<span class="TocNum">13.8.3</span><a class="TocTitle" href="curves.html#maximum_continuity">How Smooth Can a Curve Be?</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">13.9</span><a class="TocTitle" href="curves.html#automatic_tangent_control">Automatic Tangent Control</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.9.1</span><a class="TocTitle" href="curves.html#catmull_rom">Catmull-Rom Splines</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.9.2</span><a class="TocTitle" href="curves.html#tcb_splines">TCB Splines</a>
+</div>
+<div class="TocEntry TocSubSection"><span class="TocNum">13.9.3</span><a class="TocTitle" href="curves.html#endpoint_conditions">Endpoint Conditions</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">13.10</span><a class="TocTitle" href="curves.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">14</span><a class="TocTitle" href="afterword.html">Afterword</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">14.1</span><a class="TocTitle" href="afterword.html#what_next">What Next?</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">14.2</span><a class="TocTitle" href="afterword.html#exercises">Exercises</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">A</span><a class="TocTitle" href="geomtests.html">Geometric Tests</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.1</span><a class="TocTitle" href="geomtests.html#closest_point_2d_line">Closest Point on 2D Implicit Line</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.2</span><a class="TocTitle" href="geomtests.html#closet_point_parametric_ray">Closest Point on a Parametric Ray</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.3</span><a class="TocTitle" href="geomtests.html#closest_point_plane">Closest Point on a Plane</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.4</span><a class="TocTitle" href="geomtests.html#closest_point_circle">Closest Point on a Circle or Sphere</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">A.5</span><a class="TocTitle" href="geomtests.html#closest_point_aabb">Closest Point in an AABB</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">A.6</span><a class="TocTitle" href="geomtests.html#intersection_tests">Intersection Tests</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.7</span><a class="TocTitle" href="geomtests.html#intersection_2d_lines">Intersection of Two Implicit Lines in 2D</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.8</span><a class="TocTitle" href="geomtests.html#intersection_3d_rays">Intersection of Two Rays in 3D</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.9</span><a class="TocTitle" href="geomtests.html#intersection_ray_plane">Intersection of a Ray and Plane</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.10</span><a class="TocTitle" href="geomtests.html#intersection_aabb_plane">Intersection of an AABB and Plane</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.11</span><a class="TocTitle" href="geomtests.html#intersection_three_planes">Intersection of Three Planes</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.12</span><a class="TocTitle" href="geomtests.html#intersection_ray_sphere">Intersection of Ray and a Circle or Sphere</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.13</span><a class="TocTitle" href="geomtests.html#intersection_two_spheres">Intersection of Two Circles or Spheres</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.14</span><a class="TocTitle" href="geomtests.html#intersection_sphere_aabb">Intersection of a Sphere and AABB</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.15</span><a class="TocTitle" href="geomtests.html#intersection_sphere_plane">Intersection of a Sphere and a Plane</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.16</span><a class="TocTitle" href="geomtests.html#intersection_ray_triangle">Intersection of a Ray and a Triangle</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.17</span><a class="TocTitle" href="geomtests.html#intersection_two_aabbs">Intersection of Two AABBs</a>
+</div>
+<div class="TocEntry TocSection">
+<span class="TocNum">A.18</span><a class="TocTitle" href="geomtests.html#intersection_ray_aabb">Intersection of a Ray and an AABB</a>
+</div>
+<div class="TocEntry TocChapter"><span class="TocNum">B</span><a class="TocTitle" href="answers.html">Answers to the Exercises</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.1</span><a class="TocTitle" href="answers.html#cartesianspace">Chapter 1</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.2</span><a class="TocTitle" href="answers.html#vectors">Chapter 2</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.3</span><a class="TocTitle" href="answers.html#multiplespaces">Chapter 3</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.4</span><a class="TocTitle" href="answers.html#matrixintro">Chapter 4</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.5</span><a class="TocTitle" href="answers.html#matrixtransforms">Chapter 5</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.6</span><a class="TocTitle" href="answers.html#matrixmore">Chapter 6</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.7</span><a class="TocTitle" href="answers.html#polarspace">Chapter 7</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.8</span><a class="TocTitle" href="answers.html#orient">Chapter 8</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.9</span><a class="TocTitle" href="answers.html#geomprims">Chapter 9</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.10</span><a class="TocTitle" href="answers.html#graphics">Chapter 10</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.11</span><a class="TocTitle" href="answers.html#kinematics_calculus">Chapter 11</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.12</span><a class="TocTitle" href="answers.html#dynamics">Chapter 12</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.13</span><a class="TocTitle" href="answers.html#curves">Chapter 13</a>
+</div>
+<div class="TocEntry TocSection"><span class="TocNum">B.14</span><a class="TocTitle" href="answers.html#afterword">Chapter 14</a>
+</div>
+</div><div class="ChapterEndQuotes">
+<div class="WittyQuotation">
+    So much time, and so little to do!<br>Strike that, reverse it.
+<div class="QuotationSource">&#8212;&#160;Willy Wonka</div>
+</div>
+</div></div>
+<div id="RightColumn"></div>
+</div></body>
+<!-- Mirrored from gamemath.com/book/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 May 2025 17:06:12 GMT -->
+</html>
